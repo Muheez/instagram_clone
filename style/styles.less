@@ -21,6 +21,7 @@
 
 @lightAsh: #e7e7e7;
 @darkAsh: #262626;
+@lightText: #9999A2;
 
 // main styles //
 
@@ -81,4 +82,152 @@
 			margin: 0 1em;
 		}
 	}
+}
+
+.post-list:extend(.boxing) {
+	position: relative;
+	width: 100%;
+	padding-top: 10em;
+	padding-bottom: 10em;
+}
+
+.post {
+	position: relative;
+	width: 65%;
+	background-color: white;
+	border: 1px solid @lightAsh;
+	border-radius: 3px;
+	margin: auto;
+	margin-bottom: 3.375em;
+
+	.post-header:extend(.boxing) {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		border-bottom: 1px solid @lightAsh;
+		padding: 1em 1.5em;
+
+		.user-image {
+			float: left;
+			margin-right: 0.667em;
+		}
+
+		.username {
+			position: relative;
+			color: @darkAsh;
+			font-size: 14px;
+			margin-top: 0.222em;
+		}
+
+		.post-time {
+			position: absolute;
+			font-size: 0.9em;
+			color: @lightText;
+			right: 1.5em;
+			top: 1.25em;
+			font-weight: 400;
+		}
+	}
+
+	.post-image {
+		position: relative;
+		width: 100%;
+		height: 32em;
+	}
+
+	.post-likes:extend(.boxing) {
+		position: relative;
+		width: 20%;
+		color: @darkAsh;
+		padding-left: 1.5em;
+		margin-top: 1.25em;
+		margin-bottom: 0.444em;
+		font-weight: 600;
+		font-size: 1em;
+	}
+
+	.post-caption:extend(.boxing) {
+		position: relative;
+		font-size: 0.95em;
+		color: @darkAsh;
+		width: 100%;
+		padding: 0 1.5em;
+		margin-bottom: 0.444em;
+
+		.username {
+			font-weight: 800;
+		}
+	}
+
+	.post-comments:extend(.boxing) {
+		position: relative;
+		width: 100%;
+		padding: 0 1.5em;
+		margin-bottom: 1.5em;
+
+		.comment {
+			position: relative;
+			font-size: 0.95em;
+			color: @darkAsh;
+
+			.username {
+				font-weight: 800;
+			}
+		}
+	}
+
+	.post-actions:extend(.boxing) {
+		position: relative;
+		width: 92%;
+		margin: auto;
+		padding-top: 1.5em;
+		border-top: 1px solid @lightAsh;
+		margin-bottom: 0.667em;
+
+		.like-post {
+			position: relative;
+			float: left;
+			opacity: 0.4;
+			margin-right: 0.667em;
+		}
+
+		.comment {
+			position: relative;
+			width: 80%;
+			font-size: 0.95em;
+			float: left;
+			top: -0.444em;
+			border: transparent;
+		}
+
+		.comment::placeholder {
+			color: @lightText;
+			font-weight: 300;
+		}
+	}
+}
+
+.post:first-of-type {
+	.post-image {
+		background: url("../img/img2.jpg") center no-repeat;
+		background-size: cover;
+	}
+}
+
+.post:nth-of-type(2) {
+	.post-image {
+		background: url("../img/img6.jpg") center no-repeat;
+		background-size: cover;
+	}
+}
+
+.img1 {
+	background: url("../img/img4.jpg") center no-repeat;
+	background-size: cover;
+}
+
+.img2 {
+	background: url("../img/img9.jpg") center no-repeat;
+	background-size: cover;
 }
