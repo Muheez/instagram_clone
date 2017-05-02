@@ -1,3 +1,84 @@
 @import "modules.css";
 @import "layout.css";
 @import "base.css";
+
+//helper classes //
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.boxing {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// colors //
+
+@lightAsh: #e7e7e7;
+@darkAsh: #262626;
+
+// main styles //
+
+.topbar:extend(.boxing) {
+	position: relative;
+	width: 70%;
+	padding: 1.5em 0;
+	margin: auto;
+	// outline: 1px solid black;
+
+	.brands:extend(.boxing) {
+		position: absolute;
+		float: left;
+		display: table;
+
+		.insta-logo,
+		.insta-logo-type {
+			float: left;
+			margin: 0 1.225em;
+		}
+
+		.insta-logo-type {
+			margin-top: 0.198em;
+		}
+
+		.insta-logo:after {
+			content: "";
+			height: 100%;
+			position: absolute;
+			width: 1px;
+			background-color: @darkAsh;
+			right: -1.225em;
+		}
+	}
+
+	.search {
+		position: relative;
+		margin: auto;
+		width: 200px;
+		border-radius: 2px;
+		background-color: #fafafa;
+	}
+
+	.search::placeholder {
+		text-align: center;
+		color: #b5b5b5;
+	}
+
+	.links:extend(.boxing) {
+		position: absolute;
+		right: 1em;
+		top: 1.75em;
+		display: table;
+
+		.link {
+			position: relative;
+			float: left;
+			margin: 0 1em;
+		}
+	}
+}
