@@ -380,3 +380,87 @@
 	background: url("../img/img9.jpg") center no-repeat;
 	background-size: cover;
 }
+
+.user-profile:extend(.boxing) {
+	position: relative;
+	width: 100%;
+	padding-top: 10em;
+}
+
+.profile-brief:extend(.boxing) {
+	position: relative;
+	width: 82%;
+	margin: auto;
+
+	.user-image {
+		position: relative;
+		background: url("../img/img4.jpg") center no-repeat;
+		background-size: cover;
+		float: left;
+		margin-right: 6em;
+	}
+
+	.profile-info:extend(.boxing) {
+		position: relative;
+		float: left;
+		width: 60%;
+		top: 1em;
+	}
+
+	.username {
+		position: relative;
+		color: @darkAsh;
+		font-weight: 200;
+		display: inline;
+		margin-right: 1em;
+	}
+
+	.edit-profile {
+		position: relative;
+		display: inline;
+		top: -0.3em;
+		background-color: transparent;
+		border: 1px solid @lightText;
+		padding-left: 2em;
+		padding-right: 2em;
+		color: @darkAsh;
+	}
+
+	.analysis:extend(.boxing) {
+		position: relative;
+		display: table;
+		margin-top: 1.125em;
+		margin-bottom: 1.125em;
+
+		.data {
+			position: relative;
+			color: @darkAsh;
+			font-size: 0.95em;
+			float: left;
+
+			.value {
+				position: relative;
+				font-weight: 600;
+			}
+		}
+
+		.data:nth-of-type(2) {
+			position: relative;
+			margin: 0 3.375em;
+		}
+	}
+
+	.name {
+		position: relative;
+		color: @darkAsh;
+		font-weight: 600;
+		font-size: 0.98em;
+		display: inline;
+	}
+
+	.bio {
+		position: relative;
+		display: inline;
+		margin-left: 0.667em;
+	}
+}
