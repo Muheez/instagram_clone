@@ -325,35 +325,35 @@
 			}
 		}
 	}
+}
 
-	.post-actions:extend(.boxing) {
+.post-actions:extend(.boxing) {
+	position: relative;
+	width: 92%;
+	margin: auto;
+	padding-top: 1.5em;
+	border-top: 1px solid @lightAsh;
+	margin-bottom: 0.667em;
+
+	.like-post {
 		position: relative;
-		width: 92%;
-		margin: auto;
-		padding-top: 1.5em;
-		border-top: 1px solid @lightAsh;
-		margin-bottom: 0.667em;
+		float: left;
+		opacity: 0.4;
+		margin-right: 0.667em;
+	}
 
-		.like-post {
-			position: relative;
-			float: left;
-			opacity: 0.4;
-			margin-right: 0.667em;
-		}
+	.comment {
+		position: relative;
+		width: 80%;
+		font-size: 0.95em;
+		float: left;
+		top: -0.444em;
+		border: transparent;
+	}
 
-		.comment {
-			position: relative;
-			width: 80%;
-			font-size: 0.95em;
-			float: left;
-			top: -0.444em;
-			border: transparent;
-		}
-
-		.comment::placeholder {
-			color: @lightText;
-			font-weight: 300;
-		}
+	.comment::placeholder {
+		color: @lightText;
+		font-weight: 300;
 	}
 }
 
@@ -531,5 +531,130 @@
 	.post-details {
 		pointer-events: auto;
 		opacity: 1;
+	}
+}
+
+.view-post:extend(.boxing) {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0,0,0,.6);
+	z-index: 99999999999999;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	.close-view {
+		position: absolute;
+		top: 2.25em;
+		right: 2.25em;
+	}
+}
+
+.post-view:extend(.boxing) {
+	position: relative;
+	width: 70%;
+	height: 86vh;
+	background-color: white;
+
+	.post-image {
+		position: relative;
+		width: 65%;
+		height: 100%;
+		float: left;
+		background: url("../img/img0.jpg") center no-repeat;
+		background-size: cover;
+	}
+}
+
+.post-view-details:extend(.boxing) {
+	position: relative;
+	width: 35%;
+	height: 100%;
+	float: left;
+	padding: 0 1.5em; 
+
+	.header:extend(.boxing) {
+		position: relative;
+		width: 100%;
+		padding: 1em 0;
+		border-bottom: 1px solid @lightAsh;
+		margin-bottom: 1.5em;
+
+		.user-image {
+			position: relative;
+			float: left;
+			margin-right: 0.667em;
+			background: url("../img/img4.jpg") center no-repeat;
+			background-size: cover;
+		}
+
+		.username {
+			position: relative;
+			color: @darkAsh;
+			font-weight: 600;
+			top: 0.667em;
+		}
+	}
+
+	.post-analysis:extend(.boxing) {
+		position: relative;
+		width: 100%;
+		margin-bottom: 1em;
+
+		.data:first-of-type {
+			float: left;
+			font-weight: 600;
+			color: @darkAsh;
+			font-size: 0.95em;
+		}
+
+		.data:last-of-type {
+			float: right;
+			font-weight: 400;
+			color: @lightText;
+			font-size: 0.95em;
+		}
+	}
+
+	.post-caption {
+		position: relative;
+		color: @darkAsh;
+		font-size: 0.9em;
+		line-height: 1.25em;
+		margin-bottom: 1.25em;
+
+		.username {
+			font-weight: 600;
+		}
+	}
+
+	.post-comments:extend(.boxing) {
+		position: relative;
+		width: 100%;
+		height: 50%;
+		overflow-y: auto;
+
+		.comment {
+			position: relative;
+			color: @darkAsh;
+			font-size: 0.9em;
+			line-height: 1.25em;
+			margin-bottom: 0.444em;
+
+			.username {
+				position: relative;
+				font-weight: 600;
+			}
+		}
+	}
+
+	.post-actions {
+		position: absolute;
+		bottom: 0;
+		left: 1em;
 	}
 }
