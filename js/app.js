@@ -3,7 +3,9 @@
 	var app = {
 		notifList: document.querySelector(".notif-list"),
 		notifLink: document.querySelector(".topbar .like-icon"),
-		userPost: document.querySelectorAll(".user-post")
+		userPost: document.querySelectorAll(".user-post"),
+		postView: document.querySelector(".view-post"),
+		closePostViewButton: document.querySelector(".view-post .close-view")
 	}
 
 	document.addEventListener('click', function(e) {
@@ -28,7 +30,15 @@
 		}
 	}
 
-	app.userPostHoverEvent = function(post) {
+	app.hidePostView = function() {
+		app.postView.classList.remove('view-post-active');
+	}
+
+	app.showPostView = function() {
+		app.postView.classList.add('view-post-active');
+	}
+
+	app.userPostEvents = function(post) {
 		post.addEventListener('mouseover', function() {
 			this.classList.add('user-post-hover');
 		});
@@ -36,14 +46,29 @@
 		post.addEventListener('mouseout', function() {
 			this.classList.remove('user-post-hover');
 		});
+
+		post.addEventListener('click', function() {
+			app.showPostView();
+			console.log('works');
+		});
 	}
 
 	for(var i = 0, len = app.userPost.length; i < len; i++) {
-		app.userPostHoverEvent(app.userPost[i]);
+		app.userPostEvents(app.userPost[i]);
 	}
 
 	app.populateUserPost();
 
 	app.notifLink.addEventListener('click', app.toggleNotifList);
+
+	app.closePostViewButton.addEventListener('click', function(){
+		app.hidePostView();
+	});
+
+	// app.postView.addEventListener('click', function(e) {
+	// 	if(!e.target.classList.contains('post-view')) {
+	// 		app.hidePostView();
+	// 	}
+	// }, false);
 
 }());
