@@ -669,3 +669,88 @@
 	opacity: 1;
 	pointer-events: auto;
 }
+
+.edit-profile-view:extend(.boxing) {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, .6);
+	z-index: 9999999999999;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	.close-view {
+		position: absolute;
+		top: 3.375em;
+		right: 3.375em;
+	}
+}
+
+.edit-profile-form:extend(.boxing) {
+	position: relative;
+	width: 40%;
+	height: 68vh;
+	background-color: white;
+	border-radius: 3px;
+	padding: 2.25em 2.8em;
+
+	.header:extend(.boxing) {
+		position: relative;
+		display: table;
+		margin-bottom: 2.5em;
+		// margin: auto;
+
+		.user-image {
+			position: relative;
+			float: left;
+			background: url("../img/img4.jpg") center no-repeat;
+			background-size: cover;
+			margin-right: 1em;
+		}
+
+		.username {
+			position: relative;
+			color: @darkAsh;
+			float: left;
+			font-weight: 200;
+			top: 0.444em;
+		}
+	}
+
+	label {
+		position: relative;
+		color: @darkAsh;
+		font-weight: 600;
+		margin-right: 1.5em;
+		margin-bottom: 2.25em;
+		width: 6em;
+		display: inline-block;
+		text-align: right;
+		font-size: 0.95em;
+	}
+
+	.text-field {
+		display: inline-block;
+		font-size: 0.95em;
+		width: 60%;
+	}
+
+	label[for="bio"] {
+		position: relative;
+		top: -2em;
+	}
+
+	.submit {
+		position: relative;
+		background-color: @blue;
+		color: white;
+		margin: auto;
+		padding-left: 2.5em;
+		padding-right: 2.5em;
+		margin-top: 2.25em;
+	}
+}
