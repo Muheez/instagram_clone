@@ -682,12 +682,23 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+	opacity: 0;
+	pointer-events: none;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
 
 	.close-view {
 		position: absolute;
 		top: 3.375em;
 		right: 3.375em;
 	}
+}
+
+.edit-profile-view.active {
+	opacity: 1;
+	pointer-events: auto;
 }
 
 .edit-profile-form:extend(.boxing) {
