@@ -342,6 +342,12 @@
 		margin-right: 0.667em;
 	}
 
+	.like-post.active {
+		background: url("../icons/like-red.svg") center no-repeat;
+		background-size: cover;
+		opacity: 1;
+	}
+
 	.comment {
 		position: relative;
 		width: 80%;
@@ -416,15 +422,24 @@
 		margin-right: 1em;
 	}
 
-	.edit-profile {
+	.def-button {
 		position: relative;
 		display: inline;
 		top: -0.3em;
-		background-color: transparent;
-		border: 1px solid @lightText;
 		padding-left: 2em;
 		padding-right: 2em;
+	}
+
+	.edit-profile {
 		color: @darkAsh;
+		background-color: transparent;
+		border: 1px solid @lightText;
+	}
+
+	.follow {
+		position: relative;
+		background-color: @blue;
+		color: white;
 	}
 
 	.analysis:extend(.boxing) {

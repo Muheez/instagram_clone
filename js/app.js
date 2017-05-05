@@ -8,7 +8,8 @@
 		editProfileView: document.querySelector(".edit-profile-view"),
 		editProfileButton: document.querySelector(".user-profile .edit-profile"),
 		closePostViewButton: document.querySelector(".view-post .close-view"),
-		closeEditProfileViewButton: document.querySelector(".edit-profile-view .close-view")
+		closeEditProfileViewButton: document.querySelector(".edit-profile-view .close-view"),
+		likeButton: document.querySelectorAll(".post-actions .like-post")
 	}
 
 	document.addEventListener('click', function(e) {
@@ -64,8 +65,18 @@
 		});
 	}
 
+	app.likeButtonEvent = function(button) {
+		button.addEventListener('click', function() {
+			this.classList.toggle('active');
+		})
+	}
+
 	for(var i = 0, len = app.userPost.length; i < len; i++) {
 		app.userPostEvents(app.userPost[i]);
+	}
+
+	for(var i = 0, len = app.likeButton.length; i < len; i++) {
+		app.likeButtonEvent(app.likeButton[i]);
 	}
 
 	app.populateUserPost();
